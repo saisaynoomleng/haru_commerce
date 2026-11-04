@@ -1,6 +1,7 @@
-@import "tailwindcss";
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+@plugin '@tailwindcss/typography';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -46,19 +47,88 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* ------------------- */
+  /* Brand Configuration */
+  /* ------------------- */
+
+  /* colors */
+  --color-brand-black: #1e212b;
+  --color-brand-white: #ffffff;
+
+  --color-brand-blue-50: #f4f8fb;
+  --color-brand-blue-100: #e8f0f6;
+  --color-brand-blue-200: #cbdfec;
+  --color-brand-blue-300: #9ec4db;
+  --color-brand-blue-400: #4281a4;
+  --color-brand-blue-500: #356f94;
+  --color-brand-blue-600: #2c5a78;
+  --color-brand-blue-700: #284c64;
+  --color-brand-blue-800: #254155;
+  --color-brand-blue-900: #192a38;
+
+  --color-brand-teal-50: #f3faf9;
+  --color-brand-teal-100: #d5f2ef;
+  --color-brand-teal-200: #abe4de;
+  --color-brand-teal-300: #79cfca;
+  --color-brand-teal-400: #48a9a6;
+  --color-brand-teal-500: #349897;
+  --color-brand-teal-600: #277a7a;
+  --color-brand-teal-700: #236162;
+  --color-brand-teal-800: #204e4f;
+  --color-brand-teal-900: #1f4142;
+  --color-brand-teal-950: #0c2527;
+
+  --color-brand-pink-50: #fbf5f5;
+  --color-brand-pink-100: #f8eceb;
+  --color-brand-pink-200: #f1dada;
+  --color-brand-pink-300: #e6bbbb;
+  --color-brand-pink-400: #d79597;
+  --color-brand-pink-500: #c1666b;
+  --color-brand-pink-600: #ae505a;
+  --color-brand-pink-700: #913f49;
+  --color-brand-pink-800: #7a3742;
+  --color-brand-pink-900: #69323d;
+  --color-brand-pink-950: #39181d;
+
+  --color-brand-orange-50: #faf7f2;
+  --color-brand-orange-100: #f4ede0;
+  --color-brand-orange-200: #e9d9bf;
+  --color-brand-orange-300: #d4b483;
+  --color-brand-orange-400: #cba06c;
+  --color-brand-orange-500: #c0884f;
+  --color-brand-orange-600: #b27444;
+  --color-brand-orange-700: #945d3a;
+  --color-brand-orange-800: #784b34;
+  --color-brand-orange-900: #613f2d;
+  --color-brand-orange-950: #341f16;
+
+  /* font families */
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+
+  /* font sizes */
+  --text-fs-900: 4.5rem;
+  --text-fs-800: 3.75rem;
+  --text-fs-700: 3rem;
+  --text-fs-600: 2.25rem;
+  --text-fs-500: 1.75rem;
+  --text-fs-400: 1rem;
+  --text-fs-300: 0.75rem;
+  --text-fs-200: 0.5rem;
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
+  --background: var(--color-brand-white);
+  --foreground: var(--color-brand-black);
+  --card: var(--color-brand-white);
+  --card-foreground: var(--color-brand-black);
+  --popover: var(--color-brand-white);
+  --popover-foreground: var(--color-brand-black);
+  --primary: var(--color-brand-black);
+  --primary-foreground: var(--color-brand-white);
+  --secondary: var(--color-brand-white);
+  --secondary-foreground: var(--color-brand-black);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.97 0 0);
@@ -122,9 +192,20 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground text-fs-400 leading-normal tracking-normal overflow-x-hidden font-heading;
   }
   html {
-    @apply font-sans;
+    @apply scroll-smooth;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-balance leading-0;
+  }
+  p {
+    @apply text-pretty;
   }
 }
