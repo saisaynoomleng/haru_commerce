@@ -15,6 +15,6 @@ export const JobTable = t.pgTable(
     t
       .index('open_offer_idx')
       .on(table.createdAt)
-      .where(sql`${table.status} = "open"`),
+      .where(sql`${table.status} = 'open'`),
   ],
 );
