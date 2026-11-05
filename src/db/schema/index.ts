@@ -10,3 +10,4 @@ export * from './job-application-histories.schema';
 export * from './job-application-eeo.schema';
 export * from './job-application-educations.schema';
 export * from './job-application-experiences.schema';
+export * from './promo-tokens.schema';
