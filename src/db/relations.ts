@@ -20,4 +20,33 @@ export const relations = defineRelations(schema, (r) => ({
       to: r.ProductTable.id.through(r.InventoryTable.productId),
     }),
   },
+
+  JobTable: {
+    applications: r.many.JobApplicationTable({
+      from: r.JobTable.id,
+      to: r.JobApplicationTable.jobId,
+    }),
+  },
+
+  JobApplicationTable: {
+    eeo: r.one.JobApplicationEEOTable({
+      from: r.JobApplicationTable.id,
+      to: r.JobApplicationEEOTable.applicationId,
+    }),
+
+    educations: r.many.JobApplicationEducationTable({
+      from: r.JobApplicationTable.id,
+      to: r.JobApplicationEducationTable.applicationId,
+    }),
+
+    experiences: r.many.JobApplicationExperienceTable({
+      from: r.JobApplicationTable.id,
+      to: r.JobApplicationExperienceTable.applicationId,
+    }),
+
+    statusHistories: r.many.JobApplicationStatusHistoryTable({
+      from: r.JobApplicationTable.id,
+      to: r.JobApplicationStatusHistoryTable.applicationId,
+    }),
+  },
 }));
