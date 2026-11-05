@@ -89,3 +89,5 @@ export const employmentType = t.pgEnum('employment_type', [
   'self_employed',
   'other',
 ]);
+
+export const tokenStatus = t.pgEnum('token_status', ['new', 'used']);
